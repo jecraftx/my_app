@@ -1,0 +1,24 @@
+{% extends "app_teacher/components/base.html" %}
+{% load static %}
+
+
+{% block head %}
+    <link rel="icon" href="{% static 'img/logo512.png' %}" type="image/png">
+{% endblock head %}
+
+{% block title %}
+    Home Page
+{% endblock title %}
+
+{% block navbar %}
+      {% include 'app_teacher/components/navbar.html' %}
+{% endblock navbar %}
+
+{% block main %}
+<main class="flex-shrink-0">
+</main>
+{% endblock main %}
+
+{% block footer %}
+  {% include 'app_teacher/components/footer.html' %}
+{% endblock footer %} 

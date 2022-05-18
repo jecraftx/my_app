@@ -1,0 +1,9 @@
+.main_body_1{
+    min-height: 100vh;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-image: url("../img/bg.png");
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: Zen Kaku Gothic Antique, sans-serif !important;
+}

@@ -1,0 +1,51 @@
+{% extends "app_teacher/components/base.html" %}
+{% load static %}
+
+
+{% block head %}{% endblock head %}
+
+{% block title %}
+    Change Todo
+{% endblock title %}
+
+{% block navbar %}
+    {% include 'app_teacher/components/navbar.html' %}
+{% endblock navbar %}
+
+{% block main %}
+<main class="d-flex justify-content-center mt-5 container">
+    <div class="d-flex text-center">
+
+    <form
+        action="{% url 'todo_change_data' todo.id %}"
+        method="POST"
+        enctype="multipart/form-data"
+        target="_self"
+        class="form-control align-items-center form-control-lg m-1 p-1 "
+        style="width: 1000px"
+    >
+        {% csrf_token %}
+        <h1 class="h3 mb-3 mt-3 fw-normal">Change the task: {{ todo.title }} {{ todo.id }}</h1>
+
+        <div class="form-floating">
+          <input type="text" class="form-control" id="floatingInput" placeholder="введи название тут..." name="title" value="{{ todo.title }}">
+          <label for="floatingInput">Title:</label>
+        </div>
+        <div class="form-floating">
+          <input type="text" class="form-control" id="floatingPassword" placeholder="Введи описание тут...sword" name="description" value="{{ todo.description }}">
+          <label for="floatingPassword">Description:</label>
+        </div>
+
+        <div class="checkbox mb-3">
+        </div>
+        <button class="w-100 btn btn-lg border-0 border-bottom btn-outline-primary" type="submit">submit</button>
+        <button class="w-100 btn btn-lg border-0 btn-outline-danger" type="reset">reset</button>
+      </form>
+    </div>
+</main>
+{% endblock main %}
+
+
+{% block footer %}
+  {% include 'app_teacher/components/footer.html' %}
+{% endblock footer %}

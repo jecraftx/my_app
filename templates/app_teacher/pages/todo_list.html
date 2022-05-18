@@ -1,0 +1,54 @@
+{% extends "app_teacher/components/base.html" %}
+{% load static %}
+
+
+{% block head %}{% endblock head %}
+
+{% block title %}
+    List
+{% endblock title %}
+
+{% block navbar %}
+    {% include 'app_teacher/components/navbar.html' %}
+{% endblock navbar %}
+
+{% block main %}
+<main class="flex-shrink-0">
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-4 justify-content-center">
+        {% for i in list %}
+            <div class="feature col border border-dark rounded m-4 p-3">
+                {% if i.is_completed %}
+                    <div>
+                        <i class="fa-solid fa-thumbtack"></i>
+                    </div>
+                    <div class="feature-icon bg-success bg-gradient">
+                        <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"></use></svg>
+                    </div>
+                    <h2>{{i.title}}</h2>
+                    <a class="btn btn-outline-primary" href="{% url 'todo_detail' i.id %}">More</a>
+                    <a class="btn btn-outline-danger" href="{% url 'todo_delete' i.id %}">Delete</a>
+                    <a class="btn btn-outline-info" href="{% url 'todo_update_status' i.id %}">Change status</a>
+                    <a class="btn btn-outline-info" href="{% url 'todo_change_data' i.id %}">Change task</a>
+                {% else %}
+                    <div>
+                        <i class="fa-solid fa-thumbtack"></i>
+                    </div>
+                    <div class="feature-icon  bg-danger bg-gradient">
+                        <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"></use></svg>
+                    </div>
+                    <h2>{{i.title}}</h2>
+                    <a class="btn btn-outline-primary" href="{% url 'todo_detail' i.id %}">More</a>
+                    <a class="btn btn-outline-danger" href="{% url 'todo_delete' i.id %}">Delete</a>
+                    <a class="btn btn-outline-info" href="{% url 'todo_update_status' i.id %}">Change status</a>
+                    <a class="btn btn-outline-info" href="{% url 'todo_change_data' i.id %}">Change task</a>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</main>
+{% endblock main %}
+
+
+{% block footer %}
+  {% include 'app_teacher/components/footer.html' %}
+{% endblock footer %}

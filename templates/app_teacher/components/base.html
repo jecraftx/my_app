@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="todos" content="my first todo list">
+    <meta name="author" content="Adina">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        {% block title %}заголовок страницы{% endblock title %}
+    </title>
+    <link rel="icon" href="{% static 'img/logo512.png' %}" type="image/png">
+    <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/my.css' %}">
+    <link rel="stylesheet" href="{% static 'fa/css/all.css' %}">
+    {% block head %}{% endblock head %}
+</head>
+<body class="d-flex flex-column h-100 main_body_1" style="min-height: 100vh;">
+    {% block navbar %}{% endblock navbar %}
+    {% block prestyle %}{% endblock prestyle %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/my.css' %}">
+    {% block poststyle %}{% endblock poststyle %}
+    <div class="flex-shrink-0" style="min-height: 80vh;">
+        {% block main %}
+        
+        {% endblock main %}
+    </div>
+    {% block footer %}{% endblock footer %}
+    <script src="{% static 'js/bootstrap/bootstrap.js' %}"></script>
+</body>
+</html>
