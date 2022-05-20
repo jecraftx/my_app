@@ -18,14 +18,14 @@
     <i class="fa-solid fa-angles-left"></i>
     <a class="text-decoration-none mx-auto p-1 text-dark" href="{% url 'todo_list' %}">BACK</a>
     <div class="px-4 py-5 my-5 text-center">
-    <img class="d-block mx-auto mb-4" src="../img/bg.png" alt="" width="72" height="57">
+    <img class="d-block mx-auto mb-4" src="static/img/todo.png" alt="" width="72" height="57">
     <h1 class="display-5 fw-bold">{{ todo.title }}</h1>
     <div class="col-lg-6 mx-auto">
       <p class="lead mb-4">{{ todo.description }}</p>
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
         <button type="button" class="btn btn-outline-primary btn-lg px-4 gap-3">Change</button>
          {% if todo.is_completed %}
-            Task is completed
+         <button type="button" class="btn btn-success btn-lg px-4 gap-3">Task is completed</button>
           {% else %}
             <button type="button" class="btn btn-outline-danger btn-lg px-4" >Delete</button>
           {% endif %}
