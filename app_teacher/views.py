@@ -91,3 +91,30 @@ def todo_change_data(request, todo_id):
         "todo": obj
     }
     return render(request, 'app_teacher/pages/ChangeTodo.html', context)
+
+def admin_page(request):
+
+    if request.method == "POST":
+        import openpyxl
+        excel = request.FILES.get("excel", None)
+        print(excel)
+        workbook = openpyxl.load_workbook(excel)
+        sheet = workbook.active
+        # local_value = sheet['B2'].value
+
+        global_list = []
+        for num in range(1, 20+1):
+            local_list = []
+            for char in "ABC":
+                local_list.append(sheet[f'{char}{num}'].value)
+            global_list.append(local_list)
+        print("global_list: ", global_list)
+
+        for i in global_list:
+            obj = models.Task.objects.create(
+                title=i[1],
+                description=i[2]
+            )
+    context = {
+    }
+    return render(request, 'app_teacher/pages/AdminPage.html', context)
