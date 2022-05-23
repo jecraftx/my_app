@@ -8,7 +8,6 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
-import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,7 +22,7 @@ SECRET_KEY = 'django-insecure-p=vci)wm9ymra&72n%e$pb&sxh5kv%*1xbx*po#gr30s3#@hg*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*']  # 192.168.15.87
 
 
 # Application definition
@@ -48,8 +47,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'settings.urls'
@@ -119,17 +116,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = '/static/'
-#STATIC_ROOT = Path(BASE_DIR / 'static')
+STATIC_ROOT = Path(BASE_DIR / 'static')
 STATIC_DIR = Path(BASE_DIR / 'static')
 STATICFILES_DIRS = [
     Path(BASE_DIR / 'static_external'),
-    Path(BASE_DIR / 'static'),
+    # Path(BASE_DIR / 'static'),
 ]
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = Path(BASE_DIR, 'static/media/')
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
