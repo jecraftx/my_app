@@ -42,7 +42,7 @@ def todo_detail(request, todo_id):
 
 def todo_list(request):
     objects = models.Task.objects.all()
-    count_object_on_one_page = 2
+    count_object_on_one_page = 3
     current_page_from_request_parametr = request.GET.get('page')
     page_obj = utils.CustomPaginator.get_page(
         objs=objects,

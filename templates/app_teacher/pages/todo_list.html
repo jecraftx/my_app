@@ -4,7 +4,7 @@
 {% block head %}{% endblock head %}
 
 {% block title %}
-    Список задач
+    Todo List
 {% endblock title %}
 
 {% block navbar %}
@@ -12,14 +12,14 @@
 {% endblock navbar %}
 
 {% block main %}
-<main class="flex-shrink-0">
+<main class="flex-shrink-0 w-100%">
     <div>
         {% include 'app_teacher/components/paginator.html' %}
     </div>
     <div class="row g-4 py-5 row-cols-1 row-cols-lg-4 justify-content-center">
         {% if not page %}
             <div class="text-center">
-                No data!
+                <h1>No Tasks</h1>
             </div>
         {% else %}
             {% for i in page %}
