@@ -1,7 +1,7 @@
 {% load static %}
 
 <nav aria-label="Page navigation example">
-    <ul class="pagination">
+    <ul class="pagination m-3 bd-example">
       {% if page.has_previous %}
         <li class="page-item">
           <a class="page-link" href="?page=1" aria-label="Previous">
@@ -19,6 +19,7 @@
           <a class="page-link" href="?page={{ i }}">{{i}}</a>
         </li>
       {% endfor %}
+      
       {% if page.has_next %}
         <li class="page-item">
           <a class="page-link" href="?page={{ page.next_page_number }}" aria-label="Next">

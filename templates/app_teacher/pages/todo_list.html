@@ -12,9 +12,12 @@
 {% endblock navbar %}
 
 {% block main %}
-<main class="flex-shrink-0 w-100%">
+<main class="flex-shrink-0">
     <div>
         {% include 'app_teacher/components/paginator.html' %}
+    </div>
+    <div>
+        <h1 class="d-flex justify-content-center">tasks: {{todo_count}}</h1>
     </div>
     <div class="row g-4 py-5 row-cols-1 row-cols-lg-4 justify-content-center">
         {% if not page %}
@@ -40,7 +43,7 @@
                     <div>
                         <i class="fa-solid fa-thumbtack"></i>
                     </div>
-                        <div class="feature-icon bg-success bg-gradient">
+                        <div class="feature-icon bg-danger bg-gradient">
                             <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"></use></svg>
                         </div>
                         <h2>{{i.title}}</h2>
@@ -54,10 +57,11 @@
         {% endif %}
     </div>
     <div>
-        {% include 'app_teacher/components/paginator.html' %}
     </div>
 </main>
+{% include 'app_teacher/components/paginator.html' %}
 {% endblock main %}
+
 
 
 {% block footer %}
