@@ -14,20 +14,20 @@
 {% endblock navbar %}
 
 {% block main %}
-<main class="flex-shrink-0 detail_page"> &nbsp;
+<main class="flex-shrink-0"> &nbsp;
     <i class="fa-solid fa-angles-left"></i>
     <a class="text-decoration-none mx-auto p-1 text-dark" href="{% url 'todo_list' %}">BACK</a>
-    <div class="px-4 py-5 my-5 text-center">
+    <div class="px-4 py-5 my-5 text-center ">
     <img src="static/img/todo.png" alt="">
     <h1 class="display-5 fw-bold">{{ todo.title }}</h1>
     <div class="col-lg-6 mx-auto">
       <p class="lead mb-4">{{ todo.description }}</p>
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <button type="button" class="btn btn-outline-primary btn-lg px-4 gap-3">Change</button>
+        <a class="btn btn-outline-primary btn-lg px-4 gap-3" href="{% url 'todo_change_data' todo.id %}">Change</a>
          {% if todo.is_completed %}
             <h5 class="mt-2">Task is completed</h5>
           {% else %}
-            <button type="button" class="btn btn-outline-danger btn-lg px-4" >Delete</button>
+            <a class="btn btn-outline-danger btn-lg px-4" href="{% url 'todo_delete' todo.id %}">Delete</a>
           {% endif %}
 
           {% for i in list %}

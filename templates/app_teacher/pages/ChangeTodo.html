@@ -13,8 +13,10 @@
 {% endblock navbar %}
 
 {% block main %}
-<main class="d-flex justify-content-center mt-5 container">
-    <div class="d-flex text-center">
+<main class="flex-shrink-0">
+  <i class="fa-solid fa-angles-left"></i>
+  <a class="text-decoration-none mx-auto p-1 text-dark" href="{% url 'todo_list' %}">BACK</a>
+    <div class="d-flex justify-content-center mt-5 container">
 
     <form
         action="{% url 'todo_change_data' todo.id %}"
@@ -25,7 +27,7 @@
         style="width: 1000px"
     >
         {% csrf_token %}
-        <h1 class="h3 mb-3 mt-3 fw-normal">Change the task: {{ todo.title }} {{ todo.id }}</h1>
+        <h1 class="text-center h3 mb-3 mt-3 fw-normal">Change the task: {{ todo.title }} {{ todo.id }}</h1>
 
         <div class="form-floating">
           <input type="text" class="form-control" id="floatingInput" placeholder="введи название тут..." name="title" value="{{ todo.title }}">
