@@ -15,11 +15,23 @@
 {% endblock navbar %}
 
 {% block main %}
-<main class="d-flex justify-content-center mt-5"> 
-  
-</main>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/my.css' %}">
+</head>
+<body class="main_body2">
+    <p class="welcome">Welcome to my Todo List App: <br><a href="https://djangomvtapp.herokuapp.com">djangomvtapp.herokuapp.com</a></p>
+<!--Checkout my app on  https://djangomvtapp.herokuapp.com/-->
+</body>
+</html>
 {% endblock main %}
 
 {% block footer %}
   {% include 'app_teacher/components/footer.html' %}
 {% endblock footer %} 
+
