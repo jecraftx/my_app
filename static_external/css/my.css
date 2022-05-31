@@ -12,6 +12,15 @@
     display: flex;
     justify-content: center;
     background: none;
+    font-family: Hack, sans-serif;
+ }
+ .main_about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: none;
+    font-family: Hack, sans-serif;
  }
 .welcome a{
     text-decoration: none;
@@ -48,4 +57,3 @@
   }
   
   /*  Checkout my other pens on  https://codepen.io/grohit/  */
-  
