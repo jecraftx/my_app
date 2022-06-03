@@ -29,7 +29,9 @@
                 <div class="feature col border border-dark rounded m-4 p-3">
                     {% if i.is_completed %}
                     <div>
-                        <i class="fa-solid fa-thumbtack"></i>
+                        <i class="fa-solid fa-thumbtack"></i> &nbsp; &nbsp; &nbsp; &nbsp;
+                        <i class="fa-solid fa-hashtag"></i>
+                    {{ forloop.counter }}
                     </div>
                     <div class="feature-icon bg-success bg-gradient">
                         <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"></use></svg>
@@ -41,7 +43,9 @@
                     <a class="btn btn-outline-info" href="{% url 'todo_change_data' i.id %}">Change task</a>
                     {% else %}
                     <div>
-                        <i class="fa-solid fa-thumbtack"></i>
+                        <i class="fa-solid fa-thumbtack"></i> &nbsp; &nbsp; &nbsp; &nbsp;
+                        <i class="fa-solid fa-hashtag"></i>
+                        {{ forloop.counter }}
                     </div>
                         <div class="feature-icon bg-danger bg-gradient">
                             <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"></use></svg>
